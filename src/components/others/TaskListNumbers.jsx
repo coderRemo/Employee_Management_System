@@ -1,20 +1,20 @@
-const TaskListNumbers = () => {
+const TaskListNumbers = ({ data }) => {
   return (
     <div className="flex flex-wrap lg:flex-nowrap gap-5 justify-around mt-10 h-40">
       <div className="bg-pink-400 w-[45%] rounded-md p-10">
-        <p className="text-4xl font-semibold">0</p>
+        <p className="text-4xl font-semibold">{data?.taskCounts?.newTask}</p>
         <p className="font-medium text-xl">New Task</p>
       </div>
       <div className="bg-green-400 w-[45%] rounded-md p-10">
-        <p className="text-4xl font-semibold">0</p>
+        <p className="text-4xl font-semibold">{data?.taskCounts?.completed}</p>
         <p className="font-medium text-xl">Completed Task</p>
       </div>
       <div className="bg-blue-400 w-[45%] rounded-md p-10">
-        <p className="text-4xl font-semibold">0</p>
+        <p className="text-4xl font-semibold">{data?.taskCounts?.active}</p>
         <p className="font-medium text-xl">Accepted Task</p>
       </div>
       <div className="bg-yellow-400 w-[45%] rounded-md p-10">
-        <p className="text-4xl font-semibold">0</p>
+        <p className="text-4xl font-semibold">{data?.taskCounts?.failed}</p>
         <p className="font-medium text-xl">Failed Task</p>
       </div>
     </div>

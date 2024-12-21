@@ -1,14 +1,14 @@
 import { useState } from "react";
 import Loader from "./others/Logo";
 
-const Login = () => {
+const Login = ({ handleLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const HandleFormSubmit = (e) => {
     e.preventDefault();
-    // console.log("EMAIL-", email);
-    // console.log("PASS-", password);
+
+    handleLogin(email, password);
 
     setEmail("");
     setPassword("");
@@ -20,8 +20,6 @@ const Login = () => {
         <div>
           <Loader />
         </div>
-        {/* <h1 className="text-3xl font-bold">Hello!</h1> */}
-        {/* <p>Sign In to your Account!</p> */}
         <form
           onSubmit={(e) => {
             HandleFormSubmit(e);
